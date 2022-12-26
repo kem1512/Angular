@@ -1,0 +1,19 @@
+<table class="table table-bordered align-middle text-center">
+    <thead>
+        <tr>
+            <th>STT</th>
+            <th>Tên công việc</th>
+            <th>Trạng thái</th>
+            <th colspan="2">Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let task of tasks">
+            <td>{{task.taskId}}</td>
+            <td>{{task.taskName}}</td>
+            <td>{{task.status ? 'Hoàn thành' : 'Chưa hoàn thành'}}</td>
+            <td><button class="btn btn-primary" (click)="displayTask(task.taskId)">Sửa</button></td>
+            <td><button class="btn btn-danger" (click)="removeTask(task.taskId)">Xóa</button></td>
+        </tr>
+    </tbody>
+</table>

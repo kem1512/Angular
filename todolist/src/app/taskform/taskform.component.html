@@ -1,0 +1,22 @@
+<form class="row g-3 align-items-center my-2" (ngSubmit)="addTask()" #f="ngForm">
+    <div class="col-auto">
+        <label class="col-form-label">Tên công việc</label>
+    </div>
+    <div class="col-auto">
+        <input type="text" class="form-control" [(ngModel)]="this.child.task.taskName" name="name">
+    </div>
+    <div class="col-auto">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" [(ngModel)]="this.child.task.status"
+                ngModel name="status">
+            <label class="form-check-label" for="flexCheckChecked">
+                Hoàn thành
+            </label>
+        </div>
+    </div>
+    <div class="col-12">
+        <button class="btn btn-primary me-2">Thêm</button>
+        <button class="btn btn-dark" (click)="updateTask()">Sửa</button>
+    </div>
+</form>
+<app-tasklist #child></app-tasklist>
